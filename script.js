@@ -74,13 +74,13 @@ const prev = document.getElementById('prev')
 const next = document.getElementById('next')
 const current = document.getElementById('current')
 
-var currentPage = 1;
-var nextPage = 2;
-var prevPage = 3;
-var lastUrl = '';
-var totalPages = 100;
+let currentPage = 1;
+let nextPage = 2;
+let prevPage = 3;
+let lastUrl = '';
+let totalPages = 100;
 
-var selectedGenre = []
+let selectedGenre = []
 setGenre();
 function setGenre() {
     tagsEl.innerHTML = '';
@@ -219,8 +219,8 @@ function openNav(movie) {
         if (videoData) {
             document.getElementById("myNav").style.width = "100%";
             if (videoData.results.length > 0) {
-                var embed = [];
-                var dots = [];
+                let embed = [];
+                let dots = [];
                 videoData.results.forEach((video, idx) => {
                     let { name, key, site } = video
 
@@ -237,7 +237,7 @@ function openNav(movie) {
                     }
                 })
 
-                var content = `
+                let content = `
         <h1 class="no-results">${movie.original_title}</h1>
         <br/>
         
@@ -262,8 +262,8 @@ function closeNav() {
     document.getElementById("myNav").style.width = "0%";
 }
 
-var activeSlide = 0;
-var totalVideos = 0;
+let activeSlide = 0;
+let totalVideos = 0;
 
 function showVideos() {
     let embedClasses = document.querySelectorAll('.embed');
